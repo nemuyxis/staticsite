@@ -1,6 +1,9 @@
 from enum import Enum
+
 from htmlnode import HTMLNode, ParentNode
-from textnode import TextNode, TextType, text_node_to_html_node, text_to_textnodes
+from inline_markdown import text_to_textnodes
+from textnode import TextNode, TextType, text_node_to_html_node
+
 
 class BlockType(Enum):
     PARAGRAPH = "paragraph"
@@ -47,6 +50,7 @@ def block_to_block_type(block: str) -> BlockType:
             i += 1
         return BlockType.OLIST
     return BlockType.PARAGRAPH
+
 
 def markdown_to_html_node(markdown: str) -> ParentNode:
     blocks = markdown_to_blocks(markdown)

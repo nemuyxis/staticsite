@@ -30,7 +30,8 @@ class LeafNode(HTMLNode):
     def to_html(self):
         html = ''
         if self.value is None or self.value == "":
-            raise ValueError("No value")
+            print("No value")
+            #raise ValueError("No value")
         if self.tag is None or self.tag == "":
             html = self.value
         else:
